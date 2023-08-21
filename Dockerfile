@@ -10,3 +10,9 @@ RUN addgroup -g 1001 -S appuser && adduser -u 1001 -S appuser -G appuser
 RUN chown -R appuser:appuser /opt
 RUN mkdir /logs && chown -R appuser:appuser /logs
 USER appuser
+
+VOLUME /tmp
+
+COPY ./Shilpa.jar Shilpa.jar
+EXPOSE 8080 
+ENTRYPOINT ["java","-jar","/Shilpa.jar"]
