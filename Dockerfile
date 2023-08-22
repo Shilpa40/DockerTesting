@@ -14,7 +14,7 @@ RUN mkdir /logs && chown -R appuser:appuser /logs
 RUN mkdir /app && chown -R appuser:appuser /app
 USER appuser
 
-COPY ./Shilpa.jar /app/hello_world.jar
+COPY ./hello_world.jar /app/hello_world.jar
 EXPOSE 8080 
 WORKDIR /app
 ENTRYPOINT ["java","-jar","Hello_world.jar"]
