@@ -1,5 +1,8 @@
-# Add base alpine image
-FROM alpine:3.14
+# Base alpine image Version Argument
+ARG BASE_IMG_VER
+
+#Base Alpine image
+FROM alpine:$BASE_IMG_VER
 
 LABEL maintainer = "shilpabains40@gmail.com"
 
