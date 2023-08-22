@@ -17,4 +17,4 @@ USER appuser
 COPY ./hello_world.jar /app/hello_world.jar
 EXPOSE 8080 
 WORKDIR /app
-ENTRYPOINT ["java","-jar","Hello_world.jar"]
+CMD ["java","-jar","hello_world.jar"]
