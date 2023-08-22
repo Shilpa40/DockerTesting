@@ -7,12 +7,11 @@ RUN apk add openjdk11
 
 #create non root user with gid 1001
 RUN addgroup -g 1001 -S appuser && adduser -u 1001 -S appuser -G appuser
-RUN chown -R appuser:appuser /opt
 RUN mkdir /logs && chown -R appuser:appuser /logs
+RUN mkdir /app && chown -R appuser:appuser /app
 USER appuser
 
-VOLUME /tmp
-
-COPY ./Shilpa.jar Shilpa.jar
+COPY ./Shilpa.jar /app/Shilpa.jar
 EXPOSE 8080 
-ENTRYPOINT ["java","-jar","/Shilpa.jar"]
+WORKDIR /app
+ENTRYPOINT ["java","-jar","Shilpa.jar"]
