@@ -14,7 +14,7 @@ RUN mkdir /logs && chown -R appuser:appuser /logs
 RUN mkdir /app && chown -R appuser:appuser /app
 USER appuser
 
-COPY ./hello_world.jar /app/hello_world.jar
-EXPOSE 8080 
+COPY ./Shilpa.jar /app/Shilpa.jar
+EXPOSE 8088
 WORKDIR /app
-CMD ["java","-jar","hello_world.jar"]
+CMD java -jar hello_world.jar >> /logs/log.txt
