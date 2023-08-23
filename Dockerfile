@@ -17,4 +17,4 @@ USER appuser
 COPY ./Shilpa.jar /app/Shilpa.jar
 EXPOSE 8088
 WORKDIR /app
-CMD java -jar hello_world.jar >> /logs/log.txt
+CMD java -jar Shilpa.jar >> /logs/log.txt
